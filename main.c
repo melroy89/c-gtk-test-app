@@ -36,8 +36,8 @@ static void activate(GtkApplication *app,
   menu = gtk_menu_bar_new();
   menuItem1 = gtk_menu_item_new_with_label("File");
   menuItem2 = gtk_menu_item_new_with_label("Help");
-  submenu1  = gtk_menu_new();
-  submenu2  = gtk_menu_new();
+  submenu1 = gtk_menu_new();
+  submenu2 = gtk_menu_new();
 
   menuItem3 = gtk_menu_item_new_with_label("New File");
   menuItem4 = gtk_menu_item_new_with_label("Open File...");
@@ -47,7 +47,7 @@ static void activate(GtkApplication *app,
   gtk_menu_shell_append(GTK_MENU_SHELL(submenu1), menuItem3);
   gtk_menu_shell_append(GTK_MENU_SHELL(submenu1), menuItem4);
   gtk_menu_shell_append(GTK_MENU_SHELL(submenu1), menuItem5);
-  gtk_menu_shell_append(GTK_MENU_SHELL(submenu2), menuItem6);  
+  gtk_menu_shell_append(GTK_MENU_SHELL(submenu2), menuItem6);
 
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuItem1), submenu1);
   gtk_menu_item_set_submenu(GTK_MENU_ITEM(menuItem2), submenu2);
@@ -58,13 +58,11 @@ static void activate(GtkApplication *app,
   gtk_box_pack_start(GTK_BOX(hbox), button, FALSE, FALSE, 4);
   gtk_box_pack_end(GTK_BOX(hbox), textView, TRUE, TRUE, 4);
 
-
-
   // Add menu and horizontal box to vbox
   gtk_box_pack_start(GTK_BOX(vbox), menu, FALSE, FALSE, 0);
   gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 4);
-  // Add vbox to Window
 
+  // Add vbox to Window
   gtk_container_add(GTK_CONTAINER(window), vbox);
   gtk_widget_show_all(window);
 }
